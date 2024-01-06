@@ -1,13 +1,124 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    margin: 20px 40px;
+    font-family: 'Karla', sans-serif;
+    font-size: 16pt;
+}
+
+h1, h2 {
+    font-family: 'Markazi Text', serif;
+  }
+
+  
+h1 {
+    font-size: 64pt;
+}
+
+h2 {
+    font-size: 40pt;
+}
+
+h3 {
+    font-size: 18pt;
+}
+
+p {
+    font-size: 16pt;
+    line-height: 1.5;
+}
+
+.primary-color1 {
+    color: #f4ce14;
+}
+
+.primary-color2 {
+    color: #495e57;
+}
+
+.secondary-color1 {
+    color: #ee9972;
+}
+
+.secondary-color2 {
+    color: #fbdabb;
+}
+
+.secondary-color3 {
+    color: #edefee;
+}
+
+.secondary-color4 {
+    color: #333333;
+}
+
+
+/* h1 {
+    font-size: 50px;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+} */
+
+/* nav ul li a:hover {
+    color: #f4ce15;
+} */
+
+@media (max-width: 800px) {
+
+    nav ul,
+    footer,
+    .sub-article-section {
+        flex-direction: column;
+    }
+
+    .hero-section article {
+        text-align: center;
+        flex-direction: column-reverse;
+    }
+
+    nav ul li:hover::after {
+        transform: scaleX(0.5);
+    }
+
+    .hero-section article div {
+        width: 100%;
+    }
+
+    .hero-section .content {
+        width: 100%;
+    }
+
+    .hero-section .img-section img {
+        height: 300px;
+    }
+
+    .logo-container {
+        width: 60%;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    .sub-article:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    footer,
+    .copyright-element {
+        text-align: center;
+        margin: 5px 0;
+    }
 }
