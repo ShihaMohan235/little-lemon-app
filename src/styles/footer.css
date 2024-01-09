@@ -1,6 +1,6 @@
 footer {
     margin-top: 40px;
-    padding: 20px;
+    padding: 40px 20px;
     background-color: #edefee;
 }
 
@@ -8,13 +8,9 @@ footer {
     display: flex;
 }
 
-.img-content {
-    width: 30%;
-}
-
 .footer-content {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-evenly;
     align-items: flex-start;
     width: 100%;
@@ -43,13 +39,13 @@ footer {
 }
 
 .logo-footer {
-    width: 20%;
-    height: auto;
+    width: auto;
+    height: 80px;
     border-radius: 0;
 }
 
 .icon svg:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .copyright-element {

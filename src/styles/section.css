@@ -114,6 +114,14 @@ article {
 .sub-article a:hover {
     text-decoration: underline;
 } */
+@media (max-width: 1000px) {
+    .sub-article-section {
+        width: 100%;
+    }
+    .sub-article:not(:last-child) {
+        margin-right: 20px;
+    }
+}
 
 @media (max-width: 768px) {
     section {
@@ -132,6 +140,10 @@ article {
     
     .sub-article-content-section {
         padding: 15px;
+    }
+
+    .special-section-heading {
+        margin: 30px 0;
     }
 
     .special-section-heading h2 {
@@ -158,6 +170,10 @@ article {
 
     .sub-article:not(:last-child) {
         margin-right: 0;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .sub-article-title p {
+        font-size: 18px;
     }
 }
