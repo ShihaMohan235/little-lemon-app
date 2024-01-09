@@ -1,11 +1,13 @@
 import Nav from "./Nav";
 import '../styles/header.css';
+import Cart from "./Cart";
 
 function Header() {
     return (
       <header className="header-component">
-        <img src='/assets/Logo.svg' alt='Little Lemon Logo' className="logo"/>
         <Nav/>
+        <img src='/assets/Logo.svg' alt='Little Lemon Logo' className="logo"/>
+        <Cart/>
       </header>
     );
 }

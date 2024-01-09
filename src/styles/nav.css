@@ -23,12 +23,60 @@ nav ul li::after {
 nav ul li:hover::after {
     width: 100%;
     transform: scaleX(1.5);
-    background-color: #f4ce15;
+    background-color: rgb(244, 206, 21);
 }
 
 nav ul li a {
-    color: #495e57;
+    color: rgb(73, 94, 87);
     font-weight: 500;
     font-size: 16px;
     text-decoration: none;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        text-align: left;
+        background-color: #fbdabb;
+        top: 60px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+        padding: 10px;
+        border-bottom: 1px solid rgba(73, 94, 87, 0.2);
+    }
+
+    nav ul.is-open {
+        display: block;
+    }
+
+    nav ul.is-closed {
+        display: none;
+    }
+
+    nav ul li:hover::after {
+        transform: scaleX(0.5);
+    }
+
+    .logo-container {
+        width: 60%;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    .hamburger-menu {
+        position: relative;
+        display: block;
+        z-index: 10;
+    }
 }

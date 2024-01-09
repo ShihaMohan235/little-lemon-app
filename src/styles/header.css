@@ -1,5 +1,6 @@
 .header-component {
     display: flex;
+    flex-direction: row-reverse;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -7,6 +8,22 @@
 
 .logo {
     width: auto;
-    height: auto;
+    height: 50px;
 }
 
+.shopping-cart {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .header-component {
+        flex-direction: row;
+    }
+    .logo {
+        height: 40px;
+    }
+
+    .shopping-cart {
+        display: block;
+    }
+}

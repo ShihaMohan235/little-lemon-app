@@ -11,7 +11,7 @@ function Specials() {
     return (
         <>
             <section className="special-section-heading">
-                <h2 style={{paddingBottom: 0}}>This Weeks Specials!</h2>
+                <h2>This Weeks Specials!</h2>
                 <Button {...btnConfig} />
             </section>
             <SpecialsCard/>

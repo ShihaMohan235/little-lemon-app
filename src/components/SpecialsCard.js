@@ -27,17 +27,21 @@ function SpecialsCard() {
 
     const specialMenuCard = specialMenus.map(menu => {
         return (
-            <article className="sub-article">
-                <img src={menu.image} height="250" alt="Italian food" />
-                <div className="sub-article-title">
-                    <h3>
-                        {menu.title}
-                    </h3>
-                    <p>{menu.price}</p>
+            <article className='sub-article' key={menu.title}>
+                <div className='sub-article-img-section'>
+                    <img src={menu.image} height="250" alt="Italian food" />
                 </div>
-                <p className="sub-article-desc">{menu.description}</p>
-                <p className="sub-order-delivery">{menu.order} 
-                <PedalBikeOutlinedIcon style={{marginLeft: 10}}></PedalBikeOutlinedIcon></p>
+                <div className='sub-article-content-section'>
+                    <div className="sub-article-title">
+                        <h3>
+                            {menu.title}
+                        </h3>
+                        <p>{menu.price}</p>
+                    </div>
+                    <p className="sub-article-desc">{menu.description}</p>
+                    <p className="sub-order-delivery">{menu.order}
+                        <PedalBikeOutlinedIcon style={{ marginLeft: 10 }}></PedalBikeOutlinedIcon></p>
+                </div>
             </article>
         )
     })
