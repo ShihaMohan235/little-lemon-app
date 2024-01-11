@@ -1,12 +1,18 @@
-import HeroSection from "../components/HeroSection";
+import Chicago from "../components/Chicago";
+import CallToAction from "../components/CallToAction";
+import ReserveHighlight from "../components/ReserveHighlight";
 import Specials from "../components/Specials";
+import Testimonial from "../components/Testimonial";
 
 function HomePage() {
 
     return (
         <>
-            <HeroSection />
+            <CallToAction />
             <Specials />
+            <Testimonial/>
+            <ReserveHighlight/>
+            <Chicago/>
         </>
     )
 }

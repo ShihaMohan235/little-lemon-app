@@ -1,7 +1,7 @@
 import Button from "../custom-components/Button";
 import '../styles/section.css';
 
-function HeroSection() {
+function CallToAction() {
     const btnConfig = {
         btnClass: 'btn-primary',
         btnName: 'Reserve a Table'
@@ -25,4 +25,4 @@ function HeroSection() {
     )
 }
 
-export default HeroSection;
+export default CallToAction;

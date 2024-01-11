@@ -8,10 +8,18 @@ nav ul {
 
 nav ul li {
     margin: 0 30px;
+    padding-bottom: 3px;
     position: relative;
 }
 
-nav ul li::after {
+nav ul li a {
+    color: rgb(73, 94, 87);
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+nav ul li a::after {
     content: "";
     position: absolute;
     height: 2px;
@@ -20,17 +28,10 @@ nav ul li::after {
     bottom: 0;
 }
 
-nav ul li:hover::after {
+nav ul li a:hover::after, nav ul li a.active::after {
     width: 100%;
     transform: scaleX(1.5);
     background-color: rgb(244, 206, 21);
-}
-
-nav ul li a {
-    color: rgb(73, 94, 87);
-    font-weight: 500;
-    font-size: 16px;
-    text-decoration: none;
 }
 
 .hamburger-menu {

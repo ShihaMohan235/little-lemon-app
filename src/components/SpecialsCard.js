@@ -29,7 +29,7 @@ function SpecialsCard() {
         return (
             <article className='sub-article' key={menu.title}>
                 <div className='sub-article-img-section'>
-                    <img src={menu.image} height="250" alt="Italian food" />
+                    <img src={menu.image} height="250" alt={menu.title} />
                 </div>
                 <div className='sub-article-content-section'>
                     <div className="sub-article-title">
