@@ -7,9 +7,7 @@
 }
 
 .booking-form {
-    display: grid;
     width: 40%;
-    gap: 10px;
     margin: auto;
     padding: 40px 30px;
     background-color: rgb(73 94 87 / 90%);
@@ -17,9 +15,15 @@
     color: #ffffff;
 }
 
+.booking-form form {
+    display: grid;
+    gap: 10px;
+}
+
 .booking-form h3 {
     text-align: center;
     color:  #f4ce14;
+    padding-bottom: 5px;
 }
 
 hr {
@@ -31,7 +35,7 @@ hr {
     font-weight: 500;
 }
 
-.booking-form input, .booking-form select {
+.booking-form input, .booking-form select, .booking-form textarea {
     padding: 5px;
     font-size: 14px;
     font-weight: 500;

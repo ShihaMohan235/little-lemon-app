@@ -2,7 +2,7 @@ import { useState } from "react";
 import '../styles/booking.css';
 import Button from "../custom-components/Button";
 
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes, dispatch, onSubmit }) {
     const [formData, setFormData] = useState({
         date: '',
         time: availableTimes[0],
@@ -10,6 +10,7 @@ function BookingForm({ availableTimes, dispatch }) {
         occasion: 'Birthday',
         requirements: ''
     });
+
     const btnConfig = {
         btnClass: 'btn-primary reservation-btn',
         btnName: 'Make Your reservation',
@@ -27,20 +28,36 @@ function BookingForm({ availableTimes, dispatch }) {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
-        // You can perform further actions, such as sending the form data to a server
+        if (
+            formData.date &&
+            formData.time &&
+            formData.guestNumber &&
+            formData.occasion
+        ) {
+            onSubmit(formData);
+            setFormData({
+                date: '',
+                time: availableTimes[0],
+                guestNumber: '1',
+                occasion: 'Birthday',
+                requirements: ''
+            });
+        } else {
+            console.error('Form validation failed. Please fill in all required fields.');
+        }
+        onSubmit(formData);
     };
 
     return (
-        <form className="booking-form" onSubmit={handleSubmit} aria-labelledby="form-title">
-            <h3 id="form-title">Reserve a Table</h3>
-            <hr />
+        <form onSubmit={handleSubmit} aria-labelledby="form-title">
             <label htmlFor="res-date">Choose date*</label>
             <input
                 type="date"
                 id="res-date"
+                data-testid="res-date"
                 name="date"
                 aria-labelledby="res-date"
                 aria-required="true"
@@ -50,6 +67,7 @@ function BookingForm({ availableTimes, dispatch }) {
             />
             <label htmlFor="res-time">Choose time*</label>
             <select id="res-time"
+                data-testid="res-time"
                 name="time"
                 aria-labelledby="res-time"
                 aria-required="true"
@@ -67,6 +85,7 @@ function BookingForm({ availableTimes, dispatch }) {
             <input type="number"
                 placeholder="1" min="1" max="10"
                 id="guests"
+                data-testid="guests"
                 name="guestNumber"
                 aria-labelledby="guests"
                 aria-required="true"
@@ -75,6 +94,7 @@ function BookingForm({ availableTimes, dispatch }) {
                 onChange={handleChange} />
             <label htmlFor="occasion">Occasion*</label>
             <select id="occasion"
+                data-testid="occasion"
                 name="occasion"
                 value={formData.occasion}
                 aria-labelledby="occasion"
@@ -87,10 +107,12 @@ function BookingForm({ availableTimes, dispatch }) {
             </select>
             <label htmlFor="requirements">Special requirements(Optional)</label>
             <textarea id="requirements" max="150" rows="4"
+                data-testid="requirements"
+                name="requirements"
                 value={formData.requirements}
                 aria-labelledby="requirements"
                 aria-required="false"
-                style={{resize: 'none'}}
+                style={{ resize: 'none' }}
                 onChange={handleChange}
             >
             </textarea>
