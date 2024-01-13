@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../custom-components/Button";
 import '../styles/section.css';
 
@@ -15,7 +16,7 @@ function CallToAction() {
                 </h1>
                 <h2>Chicago</h2>
                 <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-                <Button {...btnConfig} />
+                <Link to="/booking"><Button {...btnConfig} /></Link>
             </div>
             <div className="img-section">
                 <img src="/assets/restauranfood.jpg" alt="Little Lemon food" />

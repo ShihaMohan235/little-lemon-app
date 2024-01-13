@@ -1,9 +1,11 @@
+import BookingForm from "../components/BookingForm";
+
 function BookingPage() {
 
     return (
-        <>
-            <h1>Booking Page</h1>
-        </>
+        <section className="booking-section">
+            <BookingForm />
+        </section>
     )
 }
 

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../custom-components/Button";
 import '../styles/section.css';
 import SpecialsCard from "./SpecialsCard";
@@ -12,7 +13,7 @@ function Specials() {
         <>
             <section className="special-section-heading">
                 <h2>This Weeks Specials!</h2>
-                <Button {...btnConfig} />
+                <Link to="/menu"><Button {...btnConfig} /></Link>
             </section>
             <SpecialsCard/>
         </>

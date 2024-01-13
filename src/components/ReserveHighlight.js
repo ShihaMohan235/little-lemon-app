@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../custom-components/Button";
 import '../styles/section.css';
 
@@ -11,7 +12,7 @@ function ReserveHighlight() {
         <>
             <section className="special-section-heading">
                 <h2>Want to Reserve a Table?</h2>
-                <Button {...btnConfig} />
+                <Link to="/booking"><Button {...btnConfig} /></Link>
             </section>
         </>
     )
