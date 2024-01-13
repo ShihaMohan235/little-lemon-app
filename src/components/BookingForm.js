@@ -2,10 +2,10 @@ import { useState } from "react";
 import '../styles/booking.css';
 import Button from "../custom-components/Button";
 
-function BookingForm({availableTimes}) {
+function BookingForm({ availableTimes, dispatch }) {
     const [formData, setFormData] = useState({
         date: '',
-        time: '17:00',
+        time: availableTimes[0],
         guestNumber: '1',
         occasion: 'Birthday'
     });
@@ -21,6 +21,9 @@ function BookingForm({availableTimes}) {
             ...prevData,
             [name]: value,
         }));
+        if(name === 'date') {
+            dispatch({type: 'UPDATE_TIMES', time: value});
+        }
     };
 
     const handleSubmit = (e) => {
@@ -28,11 +31,12 @@ function BookingForm({availableTimes}) {
         console.log('Form submitted:', formData);
         // You can perform further actions, such as sending the form data to a server
     };
+
     return (
         <form className="booking-form" onSubmit={handleSubmit}>
             <h3>Reserve a Table</h3>
-            <hr/>
-            <label htmlFor="res-date">Choose date</label>
+            <hr />
+            <label htmlFor="res-date">Choose date*</label>
             <input
                 type="date"
                 id="res-date"
@@ -40,32 +44,33 @@ function BookingForm({availableTimes}) {
                 value={formData.date}
                 onChange={handleChange}
             />
-            <label htmlFor="res-time">Choose time</label>
+            <label htmlFor="res-time">Choose time*</label>
             <select id="res-time"
                 name="time"
                 value={formData.time}
                 onChange={handleChange}>
-                <option value="" disabled>Select a time</option>
+                <option value="" disabled>Select a time*</option>
                 {availableTimes.map((time) => (
                     <option key={time} value={time}>
                         {time}
                     </option>
                 ))}
             </select>
-            <label htmlFor="guests">Number of guests</label>
+            <label htmlFor="guests">Number of guests*</label>
             <input type="number"
                 placeholder="1" min="1" max="10"
                 id="guests"
                 name="guestNumber"
                 value={formData.guestNumber}
                 onChange={handleChange} />
-            <label htmlFor="occasion">Occasion</label>
+            <label htmlFor="occasion">Occasion*</label>
             <select id="occasion"
                 name="occasion"
-                value={formData.guestNumber}
+                value={formData.occasion}
                 onChange={handleChange}>
                 <option>Birthday</option>
                 <option>Anniversary</option>
+                <option>Others</option>
             </select>
             <Button {...btnConfig} />
         </form>
