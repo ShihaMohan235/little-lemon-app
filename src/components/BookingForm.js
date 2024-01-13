@@ -2,17 +2,13 @@ import { useState } from "react";
 import '../styles/booking.css';
 import Button from "../custom-components/Button";
 
-function BookingForm() {
+function BookingForm({availableTimes}) {
     const [formData, setFormData] = useState({
         date: '',
         time: '17:00',
         guestNumber: '1',
         occasion: 'Birthday'
     });
-    const [availableTimes] = useState([
-        '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'
-    ]);
-
     const btnConfig = {
         btnClass: 'btn-primary',
         btnName: 'Make Your reservation',
