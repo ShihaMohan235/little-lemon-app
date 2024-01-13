@@ -7,10 +7,11 @@ function BookingForm({ availableTimes, dispatch }) {
         date: '',
         time: availableTimes[0],
         guestNumber: '1',
-        occasion: 'Birthday'
+        occasion: 'Birthday',
+        requirements: ''
     });
     const btnConfig = {
-        btnClass: 'btn-primary',
+        btnClass: 'btn-primary reservation-btn',
         btnName: 'Make Your reservation',
         type: 'submit'
     }
@@ -21,8 +22,8 @@ function BookingForm({ availableTimes, dispatch }) {
             ...prevData,
             [name]: value,
         }));
-        if(name === 'date') {
-            dispatch({type: 'UPDATE_TIMES', time: value});
+        if (name === 'date') {
+            dispatch({ type: 'UPDATE_TIMES', time: value });
         }
     };
 
@@ -33,20 +34,26 @@ function BookingForm({ availableTimes, dispatch }) {
     };
 
     return (
-        <form className="booking-form" onSubmit={handleSubmit}>
-            <h3>Reserve a Table</h3>
+        <form className="booking-form" onSubmit={handleSubmit} aria-labelledby="form-title">
+            <h3 id="form-title">Reserve a Table</h3>
             <hr />
             <label htmlFor="res-date">Choose date*</label>
             <input
                 type="date"
                 id="res-date"
                 name="date"
+                aria-labelledby="res-date"
+                aria-required="true"
+                required
                 value={formData.date}
                 onChange={handleChange}
             />
             <label htmlFor="res-time">Choose time*</label>
             <select id="res-time"
                 name="time"
+                aria-labelledby="res-time"
+                aria-required="true"
+                required
                 value={formData.time}
                 onChange={handleChange}>
                 <option value="" disabled>Select a time*</option>
@@ -61,17 +68,32 @@ function BookingForm({ availableTimes, dispatch }) {
                 placeholder="1" min="1" max="10"
                 id="guests"
                 name="guestNumber"
+                aria-labelledby="guests"
+                aria-required="true"
+                required
                 value={formData.guestNumber}
                 onChange={handleChange} />
             <label htmlFor="occasion">Occasion*</label>
             <select id="occasion"
                 name="occasion"
                 value={formData.occasion}
+                aria-labelledby="occasion"
+                aria-required="true"
+                required
                 onChange={handleChange}>
                 <option>Birthday</option>
                 <option>Anniversary</option>
                 <option>Others</option>
             </select>
+            <label htmlFor="requirements">Special requirements(Optional)</label>
+            <textarea id="requirements" max="150" rows="4"
+                value={formData.requirements}
+                aria-labelledby="requirements"
+                aria-required="false"
+                style={{resize: 'none'}}
+                onChange={handleChange}
+            >
+            </textarea>
             <Button {...btnConfig} />
         </form>
     )
