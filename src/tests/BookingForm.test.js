@@ -1,9 +1,10 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import BookingPage, { initializeTimes, updateTimes } from '../pages/BookingPage';
 import BookingForm from '../components/BookingForm';
 
 test('Renders the Booking Form heading', () => {
-  render(<BookingPage />);
+  render( <Router><BookingPage /></Router>);
   const headingElement = screen.getByText("Reserve a Table");
   expect(headingElement).toBeInTheDocument();
 });
