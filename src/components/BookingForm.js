@@ -3,6 +3,7 @@ import '../styles/booking.css';
 import Button from "../custom-components/Button";
 
 function BookingForm({ availableTimes, dispatch, onSubmit }) {
+    const [formValid, setFormValid] = useState(false);
     const [formData, setFormData] = useState({
         date: new Date().toLocaleDateString('en-CA'),
         time: '',
@@ -11,10 +12,22 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
         requirements: ''
     });
 
+    useEffect(() => {
+        const isValid = (
+            formData.date !== '' &&
+            formData.time !== '' &&
+            formData.guestNumber !== '' &&
+            formData.occasion !== ''
+        );
+
+        setFormValid(isValid);
+    }, [formData]);
+
     const btnConfig = {
         btnClass: 'btn-primary reservation-btn',
         btnName: 'Make Your reservation',
-        type: 'submit'
+        type: 'submit',
+        disabled: !formValid
     }
 
     useEffect(() => {
@@ -40,12 +53,7 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
-        if (
-            formData.date &&
-            formData.time &&
-            formData.guestNumber &&
-            formData.occasion
-        ) {
+        if (formValid) {
             onSubmit(formData);
             setFormData({
                 date: new Date().toLocaleDateString('en-CA'),
@@ -57,7 +65,6 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
         } else {
             console.error('Form validation failed. Please fill in all required fields.');
         }
-        onSubmit(formData);
     };
 
     return (
@@ -126,7 +133,7 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
                 onChange={handleChange}
             >
             </textarea>
-            <Button {...btnConfig} />
+            <Button {...btnConfig}/>
         </form>
     )
 }
