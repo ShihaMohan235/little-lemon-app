@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import '../styles/booking.css';
 import Button from "../custom-components/Button";
 
 function BookingForm({ availableTimes, dispatch, onSubmit }) {
     const [formData, setFormData] = useState({
-        date: '',
-        time: availableTimes[0],
+        date: new Date().toLocaleDateString('en-CA'),
+        time: '',
         guestNumber: '1',
         occasion: 'Birthday',
         requirements: ''
@@ -17,6 +17,16 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
         type: 'submit'
     }
 
+    useEffect(() => {
+        // Update the time in the form when availableTimes changes
+        if (availableTimes.length > 0) {
+            setFormData(prevData => ({
+                ...prevData,
+                time: availableTimes[0] // Set to the first available time by default
+            }));
+        }
+    }, [availableTimes]);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -24,7 +34,7 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
             [name]: value,
         }));
         if (name === 'date') {
-            dispatch({ type: 'UPDATE_TIMES', time: value });
+            dispatch({type: 'UPDATE_TIMES', date: new Date(value)});
         }
     };
 
@@ -39,7 +49,7 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
         ) {
             onSubmit(formData);
             setFormData({
-                date: '',
+                date: new Date().toLocaleDateString('en-CA'),
                 time: availableTimes[0],
                 guestNumber: '1',
                 occasion: 'Birthday',
@@ -59,6 +69,7 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
                 id="res-date"
                 data-testid="res-date"
                 name="date"
+                min={new Date()}
                 aria-labelledby="res-date"
                 aria-required="true"
                 required
@@ -75,7 +86,7 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
                 value={formData.time}
                 onChange={handleChange}>
                 <option value="" disabled>Select a time*</option>
-                {availableTimes.map((time) => (
+                { Array.isArray(availableTimes) && availableTimes?.map((time) => (
                     <option key={time} value={time}>
                         {time}
                     </option>
@@ -105,7 +116,7 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
                 <option>Anniversary</option>
                 <option>Others</option>
             </select>
-            <label htmlFor="requirements">Special requirements(Optional)</label>
+            <label htmlFor="requirements">Special requirements(optional)</label>
             <textarea id="requirements" max="150" rows="4"
                 data-testid="requirements"
                 name="requirements"

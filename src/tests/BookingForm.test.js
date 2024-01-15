@@ -12,14 +12,14 @@ test('initializeTimes returns the expected array of times', () => {
   const expectedTimes = [
     '17:00 PM', '18:00 PM', '19:00 PM', '20:00 PM', '21:00 PM', '22:00 PM'
   ];
-  const result = initializeTimes();
+  const result = initializeTimes;
   expect(result).toEqual(expectedTimes);
 });
 
 test('updateTimes returns the same value provided in the state', () => {
   const expectedTimes = ['17:00 PM', '18:00 PM', '19:00 PM', '20:00 PM', '21:00 PM', '22:00 PM'];
   const newTimes = ['18:00 PM', '19:00 PM', '22:00 PM'];
-
+  
   const result = updateTimes(newTimes, expectedTimes);
 
   expect(result).toEqual(newTimes);
