@@ -68,7 +68,7 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
                 id="res-date"
                 data-testid="res-date"
                 name="date"
-                min={new Date()}
+                min={new Date().toLocaleDateString('en-CA')}
                 aria-labelledby="res-date"
                 aria-required="true"
                 required

@@ -21,7 +21,7 @@ test('updateTimes returns the same value provided in the state', () => {
   const expectedTimes = ['17:00 PM', '18:00 PM', '19:00 PM', '20:00 PM', '21:00 PM', '22:00 PM'];
   const newTimes = ['18:00 PM', '19:00 PM', '22:00 PM'];
   
-  const result = updateTimes(newTimes, expectedTimes);
+  const result = updateTimes(expectedTimes, { type: 'UPDATE_TIMES', date: '2023-01-18',times: newTimes });
 
   expect(result).toEqual(newTimes);
 });
