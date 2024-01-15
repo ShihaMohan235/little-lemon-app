@@ -15,6 +15,21 @@
     color: #ffffff;
 }
 
+.booking-form.confirmed-booking {
+    text-align: center;
+    min-height: 220px;
+    display: grid;
+    place-items: center;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.booking-form.confirmed-booking svg {
+    fill:  #f4ce14;
+    height: 40px;
+    width: 40px;
+    margin-bottom: 10px;
+}
 .booking-form form {
     display: grid;
     gap: 10px;

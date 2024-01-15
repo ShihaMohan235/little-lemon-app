@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import BookingForm from "../components/BookingForm";
 import { fetchAPI, submitAPI } from "../utils/api";
+import { useNavigate } from "react-router-dom";
 
 export const initializeTimes = [
     '17:00 PM', '18:00 PM', '19:00 PM', '20:00 PM', '21:00 PM', '22:00 PM'
@@ -22,6 +23,7 @@ export const updateTimes = (state, action) => {
 
 function BookingPage() {
     const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
+    const navigate = useNavigate();
 
     const asyncDispatch = async ({date}) => {
         dispatch({ type: "loading" });
@@ -32,7 +34,9 @@ function BookingPage() {
     const handleSubmit = (formData) => {
         console.log('Form submitted with data:', formData);
         const response = submitAPI(formData);
-        console.log(response, 'response')
+        if(response) {
+            navigate("/booking-confirmed", { state: formData });
+        }
     };
 
     return (

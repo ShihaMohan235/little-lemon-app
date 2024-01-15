@@ -18,11 +18,10 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
     }
 
     useEffect(() => {
-        // Update the time in the form when availableTimes changes
         if (availableTimes.length > 0) {
             setFormData(prevData => ({
                 ...prevData,
-                time: availableTimes[0] // Set to the first available time by default
+                time: availableTimes[0]
             }));
         }
     }, [availableTimes]);

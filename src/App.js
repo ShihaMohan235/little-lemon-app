@@ -3,6 +3,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import HomePage from "./pages/HomePage";
 import BookingPage from "./pages/BookingPage";
+import ConfirmedBookingPage from "./pages/ConfirmedBookingPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />}></Route>
             <Route path="/booking" element={<BookingPage />}></Route>
+            <Route path="/booking-confirmed" element={<ConfirmedBookingPage />}></Route>
           </Routes>
 
         </div>
