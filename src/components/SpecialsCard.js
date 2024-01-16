@@ -28,9 +28,9 @@ function SpecialsCard() {
     const specialMenuCard = specialMenus.map(menu => {
         return (
             <article className='sub-article' key={menu.title}>
-                <div className='sub-article-img-section'>
+                <figure className='sub-article-img-section'>
                     <img src={menu.image} height="250" alt={menu.title} />
-                </div>
+                </figure>
                 <div className='sub-article-content-section'>
                     <div className="sub-article-title">
                         <h3>

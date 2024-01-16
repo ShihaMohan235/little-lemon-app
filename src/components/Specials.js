@@ -13,7 +13,7 @@ function Specials() {
         <>
             <section className="special-section-heading">
                 <h2>This Weeks Specials!</h2>
-                <Link to="/menu"><Button {...btnConfig} /></Link>
+                <Link to="/menu"><Button {...btnConfig} aria-label="Order Online" /></Link>
             </section>
             <SpecialsCard/>
         </>

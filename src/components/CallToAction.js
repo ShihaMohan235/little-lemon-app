@@ -9,19 +9,19 @@ function CallToAction() {
     }
     return (
         <section className="hero-section">
-        <article>
-            <div className="content">
-                <h1>
-                Little Lemon 
-                </h1>
-                <h2>Chicago</h2>
-                <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-                <Link to="/booking"><Button {...btnConfig} /></Link>
-            </div>
-            <div className="img-section">
-                <img src="/assets/restauranfood.jpg" alt="Little Lemon food" />
-            </div>
-        </article>
+            <article>
+                <div className="content">
+                    <h1>
+                        Little Lemon
+                    </h1>
+                    <h2>Chicago</h2>
+                    <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
+                    <Link to="/booking"><Button {...btnConfig} aria-label="Reserve a Table" /></Link>
+                </div>
+                <figure className="img-section">
+                    <img src="/assets/restauranfood.jpg" alt="Little Lemon food" />
+                </figure>
+            </article>
         </section>
     )
 }

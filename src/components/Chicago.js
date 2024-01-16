@@ -2,9 +2,9 @@ function Chicago() {
     return (
         <>
             <section className="about-us-section">
-                <div className="about-us-img">
+                <figure className="about-us-img">
                     <img src="/assets/restaurant chef B.jpg" className={'img1'} alt="About Little Lemon" />
-                </div>
+                </figure>
                 <div className="about-us-content">
                     <h2>Little Lemon</h2>
                     <h3>Chicago</h3>

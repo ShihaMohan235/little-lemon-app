@@ -68,7 +68,7 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
     };
 
     return (
-        <form onSubmit={handleSubmit} aria-labelledby="form-title">
+        <form onSubmit={handleSubmit} role="form" aria-labelledby="form-title">
             <label htmlFor="res-date">Choose date*</label>
             <input
                 type="date"
@@ -134,7 +134,7 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
                 onChange={handleChange}
             >
             </textarea>
-            <Button {...btnConfig}/>
+            <Button {...btnConfig} aria-label="Make Your Reservation" />
         </form>
     )
 }

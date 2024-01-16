@@ -46,9 +46,9 @@ function TestimonialCard() {
         return (
             <article className={activeStep === index? 'active testimonial': 'testimonial'} key={item.author} style={{
                 display: (activeStep === index)?'':'none'}}>
-                <div className='testimonial-img-section'>
+                <figure className='testimonial-img-section'>
                     <img src={item.image} height="150" alt={item.author} />
-                </div>
+                </figure>
                 <div className='testimonial-content-section'>
                 <Rating name="read-only" value={item.rating} readOnly />
                     <div className="testimonial-name">

@@ -8,10 +8,10 @@ import { Link } from 'react-router-dom';
 function Footer() {
     return (
         <footer>
-            <div className='footer-row1'>
-                <div className='img-content'>
+            <section className='footer-row1'>
+                <figure className='img-content'>
                     <img src="/assets/logo-footer.png" alt="Little Lemon Logo" className="logo-footer" />
-                </div>
+                </figure>
                 <div className='footer-content'>
                     <div className='contact'>
                         <p className='footer-title'>Contact us</p>
@@ -23,17 +23,6 @@ function Footer() {
                         <p>Monday to Friday: 11:00 AM to 10 PM</p>
                         <p>Saturday and Sunday: 11:00 AM to 12 PM</p>
                     </div>
-                    {/* <div className='navigation'>
-                    <p className='footer-title'>Navigation</p>
-                    <ul>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Menu</li>
-                        <li>Reservations</li>
-                        <li>Order Online</li>
-                        <li>Login</li>
-                    </ul>
-                </div> */}
                     <div className='connect'>
                         <p className='footer-title'>Connect with US</p>
                         <div className='icon'>
@@ -44,7 +33,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <div className="copyright-element">
                 &copy; 2023, Little Lemon. All rights reserved.
             </div>

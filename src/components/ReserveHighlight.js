@@ -12,7 +12,7 @@ function ReserveHighlight() {
         <>
             <section className="special-section-heading">
                 <h2>Want to Reserve a Table?</h2>
-                <Link to="/booking"><Button {...btnConfig} /></Link>
+                <Link to="/booking"><Button {...btnConfig} aria-label="Reserve a Table" /></Link>
             </section>
         </>
     )

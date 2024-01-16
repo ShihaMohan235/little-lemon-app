@@ -24,7 +24,7 @@ function ConfirmedBookingPage() {
                         </>
                         : <>
                             <h2>Something Went Wrong!</h2>
-                            <Link to="/"><Button {...btnConfig} /></Link>
+                            <Link to="/"><Button {...btnConfig} aria-label="Home Page" /></Link>
                         </>
                 }
             </div>
