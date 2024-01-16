@@ -6,9 +6,9 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
     const [formValid, setFormValid] = useState(false);
     const [formData, setFormData] = useState({
         date: new Date().toLocaleDateString('en-CA'),
-        time: '',
+        time: availableTimes.length > 0 ? availableTimes[0] : '',
         guestNumber: '1',
-        occasion: 'Birthday',
+        occasion: '',
         requirements: ''
     });
 
@@ -57,9 +57,9 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
             onSubmit(formData);
             setFormData({
                 date: new Date().toLocaleDateString('en-CA'),
-                time: availableTimes[0],
+                time: availableTimes.length > 0 ? availableTimes[0] : '',
                 guestNumber: '1',
-                occasion: 'Birthday',
+                occasion: '',
                 requirements: ''
             });
         } else {
@@ -118,6 +118,7 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
                 aria-required="true"
                 required
                 onChange={handleChange}>
+                <option value="" disabled>Select occasion*</option>
                 <option>Birthday</option>
                 <option>Anniversary</option>
                 <option>Others</option>
