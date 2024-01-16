@@ -61,12 +61,18 @@ article {
     padding-bottom: 50px;
 }
 
-.sub-order-delivery {
+a.sub-order-delivery {
     font-weight: 500;
     display: flex;
     align-items: center;
     position: absolute;
     bottom: 20px;
+    font-size: 18px;
+    color: #495e57;
+}
+
+a.sub-order-delivery:hover {
+    color: #f4ce14;
 }
 
 .special-section-heading {

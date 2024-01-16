@@ -39,8 +39,8 @@ function SpecialsCard() {
                         <p>{menu.price}</p>
                     </div>
                     <p className="sub-article-desc">{menu.description}</p>
-                    <p className="sub-order-delivery">{menu.order}
-                        <PedalBikeOutlinedIcon style={{ marginLeft: 10 }}></PedalBikeOutlinedIcon></p>
+                    <a className="sub-order-delivery">{menu.order}
+                        <PedalBikeOutlinedIcon style={{ marginLeft: 10 }}></PedalBikeOutlinedIcon></a>
                 </div>
             </article>
         )
