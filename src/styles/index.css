@@ -1,0 +1,112 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 16pt;
+}
+
+.main-grid {
+    margin: 20px 40px;
+}
+
+h1,
+h2 {
+    font-family: 'Markazi Text', serif;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+img {
+    border-radius: 10px;
+}
+.primary-color1 {
+    color: #f4ce14;
+}
+
+.primary-color2 {
+    color: #495e57;
+}
+
+.secondary-color1 {
+    color: #ee9972;
+}
+
+.secondary-color2 {
+    color: #fbdabb;
+}
+
+.secondary-color3 {
+    color: #edefee;
+}
+
+.secondary-color4 {
+    color: #333333;
+}
+
+
+@media (max-width: 800px) {
+    body {
+        font-size: 14pt;
+    }
+    .main-grid {
+        margin: 10px 20px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    h5 {
+        font-size: 14px;
+    }
+
+    h6 {
+        font-size: 12px;
+    }
+    
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}

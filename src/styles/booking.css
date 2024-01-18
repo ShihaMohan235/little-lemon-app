@@ -1,0 +1,85 @@
+.booking-section {
+    background-image: url(/public/assets/restaurant.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: block;
+    padding: 40px;
+}
+
+.booking-form {
+    width: 40%;
+    margin: auto;
+    padding: 40px 30px;
+    background-color: rgb(73 94 87 / 90%);
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.booking-form.confirmed-booking {
+    text-align: center;
+    min-height: 220px;
+    display: grid;
+    place-items: center;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.booking-form.confirmed-booking svg {
+    fill:  #f4ce14;
+    height: 40px;
+    width: 40px;
+    margin-bottom: 10px;
+}
+.booking-form form {
+    display: grid;
+    gap: 10px;
+}
+
+.booking-form h3 {
+    text-align: center;
+    color:  #f4ce14;
+    padding-bottom: 5px;
+}
+
+hr {
+    margin-bottom: 20px;
+    border: 0.5px solid #f4ce14;
+}
+.booking-form label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.booking-form input, .booking-form select, .booking-form textarea {
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.reservation-btn {
+    max-width: 300px;
+    margin: 20px auto auto;
+}
+
+@media (max-width: 768px) {
+    .booking-section {
+        padding: 20px;
+    }
+    .booking-form {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .booking-form label {
+        font-size: 14px;
+    }
+    .booking-form input, .booking-form select {
+        font-size: 14px;
+        padding: 3px;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,25 @@
+.btn-primary {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #333333;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: #f4ce14;
+    border: 1px solid #f4ce14;
+}
+
+.btn-primary:hover {
+    background-color: #495e57;
+    color: #ffffff;
+}
+
+.btn-primary:disabled {
+    pointer-events: none;
+    opacity: 0.8;
+}
+@media (max-width: 768px) {
+    .btn-primary {
+        font-size: 14px;
+    }
+}
