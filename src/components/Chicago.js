@@ -1,7 +1,7 @@
 function Chicago() {
     return (
         <>
-            <section className="about-us-section">
+            <section className="about-us-section" id="about-us">
                 <figure className="about-us-img">
                     <img src="/assets/restaurant chef B.jpg" className={'img1'} alt="About Little Lemon" />
                 </figure>

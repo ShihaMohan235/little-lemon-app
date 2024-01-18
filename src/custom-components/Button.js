@@ -1,9 +1,9 @@
 import '../styles/component.css';
 
 function Button(props) {
-  const {btnClass, btnName, btnStyle} = props;
+  const {btnname, btnStyle, ...rest} = props;
     return (
-      <button className={btnClass} style={btnStyle} {...props}>{btnName}</button>  
+      <button style={props?.btnStyle} {...rest}>{btnname}</button>  
     );
 }
   

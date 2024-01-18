@@ -24,8 +24,8 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
     }, [formData]);
 
     const btnConfig = {
-        btnClass: 'btn-primary reservation-btn',
-        btnName: 'Make Your reservation',
+        className: 'btn-primary reservation-btn',
+        btnname: 'Make Your reservation',
         type: 'submit',
         disabled: !formValid
     }

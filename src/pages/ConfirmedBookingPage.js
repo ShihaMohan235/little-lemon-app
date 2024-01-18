@@ -7,8 +7,8 @@ function ConfirmedBookingPage() {
     const location = useLocation();
     const { state } = location;
     const btnConfig = {
-        btnClass: 'btn-primary',
-        btnName: 'Back to Home'
+        className: 'btn-primary',
+        btnname: 'Back to Home'
     }
     return (
         <section className="booking-section">

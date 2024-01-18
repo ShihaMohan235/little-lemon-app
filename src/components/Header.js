@@ -10,7 +10,6 @@ function Header() {
       <Link to="/">
         <img src='/assets/Logo.svg' alt='Little Lemon Logo' className="logo" />
       </Link>
-      <Cart />
     </header>
   );
 }

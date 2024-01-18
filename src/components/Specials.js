@@ -5,15 +5,15 @@ import SpecialsCard from "./SpecialsCard";
 
 function Specials() {
     const btnConfig = {
-        btnClass: 'btn-primary',
-        btnName: 'Order Online',
+        className: 'btn-primary',
+        btnname: 'Order Online',
         btnStyle: {marginTop: 0}
     }
     return (
         <>
             <section className="special-section-heading">
                 <h2>This Weeks Specials!</h2>
-                <Link to="/menu"><Button {...btnConfig} aria-label="Order Online" /></Link>
+                <Link to="/order"><Button {...btnConfig} aria-label="Order Online" /></Link>
             </section>
             <SpecialsCard/>
         </>

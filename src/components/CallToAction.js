@@ -4,8 +4,8 @@ import '../styles/section.css';
 
 function CallToAction() {
     const btnConfig = {
-        btnClass: 'btn-primary',
-        btnName: 'Reserve a Table'
+        className: 'btn-primary',
+        btnname: 'Reserve a Table'
     }
     return (
         <section className="hero-section">

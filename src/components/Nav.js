@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../styles/nav.css';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 function Nav() {
   const [openMenu, setOpenMenu] = useState(false);

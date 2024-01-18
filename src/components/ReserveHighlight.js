@@ -4,8 +4,8 @@ import '../styles/section.css';
 
 function ReserveHighlight() {
     const btnConfig = {
-        btnClass: 'btn-primary',
-        btnName: 'Reserve a Table',
+        className: 'btn-primary',
+        btnname: 'Reserve a Table',
         btnStyle: {marginTop: 0}
     }
     return (

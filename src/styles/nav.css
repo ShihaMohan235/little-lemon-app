@@ -38,14 +38,14 @@ nav ul li a:hover::after, nav ul li a.active::after {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 928px) {
 
     nav ul {
         flex-direction: column;
         position: absolute;
         left: 0;
         text-align: left;
-        background-color: #fbdabb;
+        background-color: #edefee;
         top: 60px;
     }
 
@@ -79,5 +79,6 @@ nav ul li a:hover::after, nav ul li a.active::after {
         position: relative;
         display: block;
         z-index: 10;
+        padding: 10px;
     }
 }

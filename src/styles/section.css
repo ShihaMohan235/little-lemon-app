@@ -11,6 +11,14 @@ article {
     border-radius: 10px;
 }
 
+.page-section {
+    margin: auto;
+    padding: 40px 30px;
+    border-radius: 10px;
+    color: #495e57;
+    justify-content: center;
+}
+
 .hero-section article {
     background-color: #495e57;
     display: flex;
@@ -148,6 +156,10 @@ a.sub-order-delivery:hover {
 @media (max-width: 768px) {
     section {
         margin: 20px 0;
+    }
+
+    .page-section {
+        padding: 20px;
     }
 
     .sub-article-section, .special-section-heading, .about-us-section {
